@@ -29,8 +29,7 @@ export function createGetRequest(url: URL): HttpRequest {
  */
 export async function getCredentials(response: HttpResponse): Promise<AwsCredentialIdentity> {
   const contentType = response?.headers["content-type"] ?? response?.headers["Content-Type"] ?? "";
-  console.log(response?.headers);
-  console.log(contentType);
+  console.warn("👺", response?.headers, contentType);
 
   if (!contentType.includes("json")) {
     console.warn(
